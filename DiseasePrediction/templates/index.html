@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Disease Risk Prediction</h2>
+        <form action="/" method="post">
+            <label>Age:</label>
+            <input type="number" name="age" required>
+
+            <label>BMI:</label>
+            <input type="number" name="bmi" step="0.1" required>
+
+            <label>Glucose Level:</label>
+            <input type="number" name="glucose" required>
+
+            <label>Insulin:</label>
+            <input type="number" name="insulin" required>
+
+            <label>Blood Pressure:</label>
+            <input type="number" name="blood_pressure" required>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if result %}
+        <h3>Prediction Result: {{ result }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
